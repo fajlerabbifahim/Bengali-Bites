@@ -15,7 +15,7 @@ function PopularCategory() {
   }, []);
   console.log(menu);
   return (
-    <div>
+    <div className="mb-10">
       {/* title section */}
       <section>
         <SectionTitle subTitle={"Check it out"} title={"FROM OUR MENU"} />
