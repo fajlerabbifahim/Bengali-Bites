@@ -32,7 +32,7 @@ function RecommendFood() {
                 <h2 className="card-title">{item.name}</h2>
                 <p>{item.recipe}</p>
                 <div className="card-actions">
-                  <button className="btn btn-primary">Buy Now</button>
+                  <button className="btn btn-outline  mt-4">Add to Card</button>
                 </div>
               </div>
             </div>

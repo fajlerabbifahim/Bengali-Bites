@@ -4,6 +4,7 @@ import CategorySlider from "../CategorySlider/CategorySlider";
 import PopularCategory from "../PopularCategory/PopularCategory";
 import Callus from "../Callus/Callus";
 import RecommendFood from "../RecomendFood/RecommendFood";
+import Featured from "../Featured/Featured";
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
         <PopularCategory />
         <Callus />
         <RecommendFood />
+        <Featured />
       </section>
     </div>
   );
