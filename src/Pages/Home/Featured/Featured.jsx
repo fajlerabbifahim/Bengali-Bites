@@ -18,11 +18,11 @@ function Featured() {
 
       {/* Featured content */}
       <section className="relative z-10">
-        <div className="flex flex-col md:flex-row justify-center items-center w-10/12 mx-auto gap-10">
+        <div className=" flex flex-col md:flex-row justify-center items-center w-10/12 mx-auto gap-10">
           {/* Image Section */}
           <div className="md:w-1/3">
             <img
-              className="w-full rounded-lg shadow-lg"
+              className="w-full rounded-lg shadow-lg "
               src={featuredImage}
               alt="Featured Dish"
             />

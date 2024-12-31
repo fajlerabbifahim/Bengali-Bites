@@ -5,10 +5,15 @@ import PopularCategory from "../PopularCategory/PopularCategory";
 import Callus from "../Callus/Callus";
 import RecommendFood from "../RecomendFood/RecommendFood";
 import Featured from "../Featured/Featured";
+import Testimonials from "../Testimonials/Testimonials";
+import { Helmet } from "react-helmet-async";
 
 function Home() {
   return (
     <div>
+      <Helmet>
+        <title>resturent home</title>
+      </Helmet>
       <section>
         <Banner />
         <CategorySlider />
@@ -16,6 +21,7 @@ function Home() {
         <Callus />
         <RecommendFood />
         <Featured />
+        <Testimonials />
       </section>
     </div>
   );

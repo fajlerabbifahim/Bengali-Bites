@@ -12,7 +12,7 @@ function RecommendFood() {
   }, []);
 
   return (
-    <div>
+    <div className="my-20">
       {/* title section  */}
       <section>
         <SectionTitle subTitle={"Should Try"} title={"CHEF RECOMMENDS"} />
