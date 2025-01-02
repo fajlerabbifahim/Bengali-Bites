@@ -12,9 +12,7 @@ function MenuItemCard({ item }) {
       />
 
       <div className="text-center sm:text-left sm:ml-4">
-        <h2 className="text-base sm:text-lg font-semibold uppercase">
-          {name}-------
-        </h2>
+        <h2 className="text-base sm:text-lg font-semibold uppercase">{name}</h2>
         <p className="text-xs sm:text-sm text-gray-600">{recipe}</p>
       </div>
 

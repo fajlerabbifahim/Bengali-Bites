@@ -31,7 +31,7 @@ function Navbar() {
       </li>
       <li>
         <NavLink
-          to="/oder"
+          to="/oder/salad"
           className={({ isActive }) =>
             isActive
               ? "btn btn-ghost normal-case text-lg text-yellow-500"

@@ -12,8 +12,9 @@ const router = createBrowserRouter([
     path: "/menu",
     element: <Menu />,
   },
+
   {
-    path: "/oder",
+    path: "/oder/:category",
     element: <Oder />,
   },
 ]);

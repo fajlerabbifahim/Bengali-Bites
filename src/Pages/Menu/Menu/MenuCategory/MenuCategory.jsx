@@ -2,6 +2,7 @@ import React from "react";
 import Cover from "../../../../Components/Cover/Cover";
 import SectionTitle from "../../../../Components/SectionTitle/SectionTitle";
 import MenuItemCard from "../../../../Components/MenuItemCard/MenuItemCard";
+import { Link } from "react-router-dom";
 
 function MenuCategory({ items, title, subTitle, img }) {
   return (
@@ -17,6 +18,12 @@ function MenuCategory({ items, title, subTitle, img }) {
             <MenuItemCard key={item._id} item={item} />
           ))}
         </section>
+        <Link
+          to={`/oder/${title}`}
+          className="btn btn-outline w-32 mt-5 flex justify-center mx-auto"
+        >
+          Oder Now
+        </Link>
       </section>
     </div>
   );

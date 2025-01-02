@@ -41,7 +41,7 @@ function Menu() {
           {/* dessert section  */}
           <MenuCategory
             items={dessertItem}
-            title={"DESSERTS"}
+            title={"desserts"}
             subTitle={
               '"Delight in our heavenly desserts, crafted with love and the finest ingredients. From creamy cakes to rich pastries, every bite is a sweet escape to bliss!"'
             }
@@ -50,7 +50,7 @@ function Menu() {
           {/* pizza section  */}
           <MenuCategory
             items={pizzaItem}
-            title={"PIZZA"}
+            title={"pizza"}
             subTitle={
               '"Savor the perfect pizza, baked to perfection with a crispy crust, rich tomato sauce, and fresh toppings. Every slice is a mouthwatering blend of flavor and happiness!"'
             }
@@ -59,7 +59,7 @@ function Menu() {
           {/* salad section  */}
           <MenuCategory
             items={saladItem}
-            title={"SALAD"}
+            title={"salad"}
             subTitle={
               '"Experience freshness in every bite with our vibrant salads, crafted from crisp greens, juicy vegetables, and flavorful dressings. A healthy and delicious choice for any meal!"'
             }
@@ -68,7 +68,7 @@ function Menu() {
           {/* soup section  */}
           <MenuCategory
             items={soupItem}
-            title={"SOUP"}
+            title={"soup"}
             subTitle={
               '"Warm your soul with our comforting soups, made from fresh ingredients and rich flavors. From creamy blends to hearty broths, each bowl is a hug in every sip!"'
             }
