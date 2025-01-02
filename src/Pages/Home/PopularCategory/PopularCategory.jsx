@@ -1,19 +1,13 @@
-import React, { useEffect, useState } from "react";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
-import axios from "axios";
+
 import MenuItemCard from "../../../Components/MenuItemCard/MenuItemCard";
+import useMenu from "../../../Hooks/useMenu";
 
 function PopularCategory() {
-  const [menu, setMenu] = useState([]);
-  useEffect(() => {
-    axios.get("menu.json").then((res) => {
-      const popularItem = res.data.filter(
-        (item) => item.category === "popular"
-      );
-      setMenu(popularItem);
-    });
-  }, []);
-  console.log(menu);
+  const [menu] = useMenu();
+
+  const popularItem = menu.filter((item) => item.category === "popular");
+
   return (
     <div className="mb-10">
       {/* title section */}
@@ -23,7 +17,7 @@ function PopularCategory() {
       {/* category card section  */}
 
       <section className=" grid grid-cols-1 md:grid-cols-2">
-        {menu.map((item) => (
+        {popularItem.map((item) => (
           <MenuItemCard key={item._id} item={item} />
         ))}
       </section>

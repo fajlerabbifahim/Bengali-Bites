@@ -17,6 +17,18 @@ function Navbar() {
           Home
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/menu"
+          className={({ isActive }) =>
+            isActive
+              ? "btn btn-ghost normal-case text-lg text-yellow-500"
+              : "btn btn-ghost normal-case text-lg hover:text-yellow-500"
+          }
+        >
+          Menu
+        </NavLink>
+      </li>
     </>
   );
   return (

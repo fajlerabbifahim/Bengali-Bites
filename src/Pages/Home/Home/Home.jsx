@@ -12,7 +12,7 @@ function Home() {
   return (
     <div>
       <Helmet>
-        <title>resturent home</title>
+        <title>Bengali Bites Home</title>
       </Helmet>
       <section>
         <Banner />
