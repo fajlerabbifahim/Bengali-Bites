@@ -5,7 +5,7 @@ import axios from "axios";
 function RecommendFood() {
   const [recommendedFood, setRecommendFood] = useState([]);
   useEffect(() => {
-    axios.get("menu.json").then((res) => {
+    axios.get("http://localhost:3000/menu").then((res) => {
       const recommendFoods = res.data;
       setRecommendFood(recommendFoods);
     });

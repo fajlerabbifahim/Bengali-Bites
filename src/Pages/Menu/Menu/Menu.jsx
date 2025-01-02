@@ -41,7 +41,7 @@ function Menu() {
           {/* dessert section  */}
           <MenuCategory
             items={dessertItem}
-            title={"desserts"}
+            title={"dessert"}
             subTitle={
               '"Delight in our heavenly desserts, crafted with love and the finest ingredients. From creamy cakes to rich pastries, every bite is a sweet escape to bliss!"'
             }

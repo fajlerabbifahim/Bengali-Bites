@@ -13,7 +13,9 @@ function Testimonials() {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    axios.get("reviews.json").then((res) => setReviews(res.data));
+    axios
+      .get("http://localhost:3000/reviews")
+      .then((res) => setReviews(res.data));
   }, []);
 
   return (
@@ -37,7 +39,10 @@ function Testimonials() {
           >
             {reviews.map((review) => (
               <SwiperSlide>
-                <div className="flex flex-col justify-center text-center mx-auto max-w-[800px]">
+                <div
+                  key={review._id}
+                  className="flex flex-col justify-center text-center mx-auto max-w-[800px]"
+                >
                   <Rating
                     className="mx-auto my-5"
                     style={{ maxWidth: 150 }}

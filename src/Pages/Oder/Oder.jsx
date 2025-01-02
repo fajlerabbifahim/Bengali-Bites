@@ -12,18 +12,19 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 
 function Oder() {
-  const categories = ["salad", "pizza", "soup", "desserts", "drink"];
-  const { itemCategory } = useParams();
+  const categories = ["salad", "pizza", "soup", "dessert", "drink"];
+  const { category: itemCategory } = useParams();
   const initialTab = categories.indexOf(itemCategory);
   const [tabIndex, setTabIndex] = useState(initialTab);
-  console.log(tabIndex, "tab index ");
+  console.log(tabIndex, itemCategory, "tab index ");
   const [menu] = useMenu();
-  console.log(menu);
+
   const drinksItem = menu.filter((drink) => drink.category === "drinks");
   const dessertItem = menu.filter((dessert) => dessert.category === "dessert");
   const pizzaItem = menu.filter((pizza) => pizza.category === "pizza");
   const saladItem = menu.filter((salad) => salad.category === "salad");
   const soupItem = menu.filter((soup) => soup.category === "soup");
+
   return (
     <>
       <Helmet>

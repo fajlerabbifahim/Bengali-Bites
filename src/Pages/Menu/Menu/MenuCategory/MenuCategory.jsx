@@ -19,7 +19,7 @@ function MenuCategory({ items, title, subTitle, img }) {
           ))}
         </section>
         <Link
-          to={`/oder/${title}`}
+          to={title ? `/oder/${title}` : `/oder/salad`}
           className="btn btn-outline w-32 mt-5 flex justify-center mx-auto"
         >
           Oder Now
