@@ -29,6 +29,18 @@ function Navbar() {
           Menu
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/oder"
+          className={({ isActive }) =>
+            isActive
+              ? "btn btn-ghost normal-case text-lg text-yellow-500"
+              : "btn btn-ghost normal-case text-lg hover:text-yellow-500"
+          }
+        >
+          Oder
+        </NavLink>
+      </li>
     </>
   );
   return (
