@@ -3,15 +3,25 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import loginLottie from "../../assets/Lottie-File/login-lottie.json";
 import Lottie from "lottie-react";
+import useAuth from "../../Hooks/useAuth";
 
 function Register() {
   const [showPassword, setShowPassword] = useState(false);
-
+  const { register } = useAuth();
   const handleRegister = (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
-    console.log(data);
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    register(email, password)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((e) => {
+        console.log(e.message);
+      });
   };
   return (
     <div>

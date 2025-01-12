@@ -1,7 +1,8 @@
-import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 function Navbar() {
+  const { user, logOut } = useAuth();
   const navOptions = (
     <>
       {" "}
@@ -44,8 +45,8 @@ function Navbar() {
     </>
   );
   return (
-    <>
-      <div className="navbar fixed w-11/12 mx-auto bg-opacity-15 text-white z-20 bg-black">
+    <div>
+      <div className="navbar fixed px-10 mx-auto bg-opacity-15 text-white z-20 bg-black">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -77,10 +78,20 @@ function Navbar() {
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
         </div>
         <div className="navbar-end">
-          <Link to="/login">Login</Link>
+          {user ? (
+            <>
+              <button className="btn">
+                <Link onClick={() => logOut()}>Log Out</Link>
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to="/login">Login</Link>
+            </>
+          )}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

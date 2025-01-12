@@ -19,7 +19,7 @@ function RecommendFood() {
       </section>
 
       {/* recommended food card  */}
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto  w-11/12">
         {recommendedFood
           .sort(() => 0.5 - Math.random())
           .slice(0, 3)

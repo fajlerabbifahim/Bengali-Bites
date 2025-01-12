@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loginLottie from "../../assets/Lottie-File/login-lottie.json";
 import Lottie from "lottie-react";
 import {
@@ -10,9 +10,12 @@ import {
   validateCaptcha,
 } from "react-simple-captcha";
 import { useRef } from "react";
+import useAuth from "../../Hooks/useAuth";
 
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
+  const { login } = useAuth();
+  const navigate = useNavigate();
   const [disabled, setDisabled] = useState(true);
   const captchaRef = useRef(null);
   useEffect(() => {
@@ -30,9 +33,15 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
-    console.log(data);
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    login(email, password)
+      .then((result) => {
+        navigate("/");
+      })
+      .catch((e) => console.log("something is fucking ", e.message));
   };
 
   return (

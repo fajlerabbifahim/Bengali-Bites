@@ -6,10 +6,10 @@ import Home from "../Pages/Home/Home/Home";
 function MainLayout() {
   return (
     <div>
-      <header className="w-11/12 mx-auto">
+      <header>
         <Navbar />
       </header>
-      <main className="w-11/12 mx-auto">
+      <main>
         <section>
           {/* home  section  */}
           <Home />

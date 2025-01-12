@@ -9,14 +9,14 @@ function PopularCategory() {
   const popularItem = menu.filter((item) => item.category === "popular");
 
   return (
-    <div className="mb-10">
+    <div>
       {/* title section */}
       <section>
         <SectionTitle subTitle={"Check it out"} title={"FROM OUR MENU"} />
       </section>
       {/* category card section  */}
 
-      <section className=" grid grid-cols-1 md:grid-cols-2">
+      <section className=" grid grid-cols-1 md:grid-cols-2 mb-10 w-11/12 mx-auto">
         {popularItem.map((item) => (
           <MenuItemCard key={item._id} item={item} />
         ))}
