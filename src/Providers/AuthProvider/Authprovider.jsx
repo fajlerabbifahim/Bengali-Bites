@@ -23,7 +23,7 @@ function Authprovider({ children }) {
   }, []);
 
   //create a user
-  const register = (email, password) => {
+  const registerUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
@@ -45,7 +45,7 @@ function Authprovider({ children }) {
   const authInfo = {
     user,
     loading,
-    register,
+    registerUser,
     login,
     logOut,
   };

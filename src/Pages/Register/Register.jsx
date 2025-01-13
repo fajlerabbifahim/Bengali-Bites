@@ -1,28 +1,34 @@
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loginLottie from "../../assets/Lottie-File/login-lottie.json";
 import Lottie from "lottie-react";
 import useAuth from "../../Hooks/useAuth";
+import { useForm } from "react-hook-form";
 
 function Register() {
   const [showPassword, setShowPassword] = useState(false);
-  const { register } = useAuth();
-  const handleRegister = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const name = form.name.value;
-    const email = form.email.value;
-    const password = form.password.value;
+  const { registerUser } = useAuth();
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
-    register(email, password)
-      .then((res) => {
-        console.log(res);
+  const handleRegister = (data) => {
+    registerUser(data.email, data.password)
+      .then((result) => {
+        alert("User Create Successful");
+        navigate("/");
       })
       .catch((e) => {
-        console.log(e.message);
+        alert(e.message);
       });
+    reset();
   };
+
   return (
     <div>
       <div className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-gray-100">
@@ -40,7 +46,7 @@ function Register() {
           <h2 className="text-2xl font-bold text-center mb-6">
             Create an Account
           </h2>
-          <form onSubmit={handleRegister}>
+          <form onSubmit={handleSubmit(handleRegister)}>
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
@@ -50,10 +56,13 @@ function Register() {
               </label>
               <input
                 type="text"
-                name="name"
+                {...register("name", { required: true })}
                 placeholder="Enter your name"
                 className="w-full px-4 py-2 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
+              {errors.name && (
+                <p className="text-red-600 font-medium">Name is Require</p>
+              )}
             </div>
             <div className="mb-4">
               <label
@@ -64,10 +73,13 @@ function Register() {
               </label>
               <input
                 type="email"
-                name="email"
+                {...register("email", { required: true })}
                 placeholder="Enter your email"
                 className="w-full px-4 py-2 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
+              {errors.email && (
+                <p className="text-red-600 font-medium">Email is Require</p>
+              )}
             </div>
             <div className="mb-6 relative">
               <label
@@ -78,10 +90,20 @@ function Register() {
               </label>
               <input
                 type={showPassword ? "text" : "password"}
-                name="password"
+                {...register("password", {
+                  required: true,
+                  minLength: 6,
+                  maxLength: 20,
+                })}
                 placeholder="Create a password"
                 className="w-full px-4 py-2 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
+              {errors.password && (
+                <p className="text-red-600 font-medium">
+                  {" "}
+                  Create a Strong Password
+                </p>
+              )}
               <button
                 type="button"
                 className="absolute top-1/2 right-3 transform -translate-y-1/2 text-sm text-indigo-500"

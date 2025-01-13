@@ -105,7 +105,7 @@ function Login() {
               placeholder="Enter your password"
               className="w-full px-4 py-2 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
-            <button onClick={handleCaptchaSubmit} className="btn">
+            <button type="button" onClick={handleCaptchaSubmit} className="btn">
               Submit Captcha
             </button>
           </div>

@@ -4,6 +4,7 @@ import Menu from "../Pages/Menu/Menu/Menu";
 import Oder from "../Pages/Oder/Oder";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import PrivetRoute from "./PrivetRoute";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,14 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+  },
+  {
+    path: "/secret",
+    element: (
+      <PrivetRoute>
+        <h1>i am the secret</h1>
+      </PrivetRoute>
+    ),
   },
 ]);
 

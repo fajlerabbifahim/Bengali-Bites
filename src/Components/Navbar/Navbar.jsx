@@ -80,8 +80,8 @@ function Navbar() {
         <div className="navbar-end">
           {user ? (
             <>
-              <button className="btn">
-                <Link onClick={() => logOut()}>Log Out</Link>
+              <button onClick={() => logOut()} className="btn">
+                <Link>Log Out</Link>
               </button>
             </>
           ) : (
