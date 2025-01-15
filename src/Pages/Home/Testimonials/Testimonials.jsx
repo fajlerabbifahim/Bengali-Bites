@@ -37,12 +37,9 @@ function Testimonials() {
             modules={[Navigation]}
             autoplay={true}
           >
-            {reviews.map((review) => (
-              <SwiperSlide>
-                <div
-                  key={review._id}
-                  className="flex flex-col justify-center text-center mx-auto max-w-[800px]"
-                >
+            {reviews.map((review, idx) => (
+              <SwiperSlide key={idx}>
+                <div className="flex flex-col justify-center text-center mx-auto max-w-[800px]">
                   <Rating
                     className="mx-auto my-5"
                     style={{ maxWidth: 150 }}

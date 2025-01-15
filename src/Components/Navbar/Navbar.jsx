@@ -1,8 +1,16 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import { FaCartShopping } from "react-icons/fa6";
+import useCart from "../../Hooks/useCart";
 
 function Navbar() {
   const { user, logOut } = useAuth();
+
+  const [cart] = useCart();
+
+  if (!cart) {
+    return <p>Loading...</p>;
+  }
   const navOptions = (
     <>
       {" "}
@@ -78,6 +86,16 @@ function Navbar() {
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
         </div>
         <div className="navbar-end">
+          <div className="indicator mr-6">
+            <span className="indicator-item badge badge-secondary bg-gray-800 border-none">
+              {cart.length}
+            </span>
+            <div className=" grid h-8 w-8 place-items-center text-2xl">
+              <Link to="/">
+                <FaCartShopping />
+              </Link>
+            </div>
+          </div>
           {user ? (
             <>
               <button onClick={() => logOut()} className="btn">
