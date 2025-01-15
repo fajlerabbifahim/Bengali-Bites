@@ -8,9 +8,6 @@ function Navbar() {
 
   const [cart] = useCart();
 
-  if (!cart) {
-    return <p>Loading...</p>;
-  }
   const navOptions = (
     <>
       {" "}
@@ -88,10 +85,10 @@ function Navbar() {
         <div className="navbar-end">
           <div className="indicator mr-6">
             <span className="indicator-item badge badge-secondary bg-gray-800 border-none">
-              {cart.length}
+              {cart?.length}
             </span>
             <div className=" grid h-8 w-8 place-items-center text-2xl">
-              <Link to="/">
+              <Link to="/dashboard/cart">
                 <FaCartShopping />
               </Link>
             </div>

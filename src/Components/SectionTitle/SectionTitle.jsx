@@ -2,7 +2,7 @@ import React from "react";
 
 function SectionTitle({ subTitle, title }) {
   return (
-    <div className="text-center mx-auto px-8 lg:w-4/12">
+    <div className="text-center mx-auto px-8 lg:w-5/12">
       <p className="text-yellow-600 font-medium text-lg italic">
         ---{subTitle}---
       </p>
